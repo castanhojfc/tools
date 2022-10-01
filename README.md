@@ -1,1 +1,116 @@
-# tools
+## Tools
+
+## Terminal
+
+Z Shell: <https://www.zsh.org/>
+
+Oh My Zsh: <https://ohmyz.sh/>
+
+Z Plug: <https://github.com/zplug/zplug>
+
+```bash
+sudo apt-get install zsh
+chsh -s /bin/zsh
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+```
+
+`.zshrc` configurations:
+
+```bash
+ENABLE_CORRECTION="true"
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
+export PATH="/usr/local/opt/gettext/bin:$PATH"
+
+# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.zsh_history
+
+# Aliases
+# Some more basic aliases
+alias ll='ls -lh'
+alias la='ls -lAh'
+alias l='ls -lah'
+alias md='mkdir -p'
+alias rd='rmdir'
+alias cd..='cd ..'
+alias cd...='cd ../..'
+alias cd....='cd ../../..'
+alias cd.....='cd ../../../..'
+alias cd......='cd ../../../../..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+
+##############################
+# Zplug
+##############################
+
+# Check if zplug is installed
+if [[ ! -d ~/.zplug ]]; then
+  git clone https://github.com/zplug/zplug ~/.zplug
+  source ~/.zplug/init.zsh && zplug update --self
+fi
+
+# Essential
+source ~/.zplug/init.zsh
+
+# Zplug plugins
+zplug "zplug/zplug"
+
+# Install packages that have not been installed yet
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    else
+        echo
+    fi
+fi
+
+zplug load
+
+eval "$(starship init zsh)"
+```
+
+Plugins:
+zsh-autosuggestions: <https://github.com/zsh-users/zsh-autosuggestions>
+
+zsh-syntax-highlighting: <https://github.com/zsh-users/zsh-syntax-highlighting>
+
+Oh my zsh also comes with extra plugins, these are recommendations:
+
+```bash
+plugins=(git asdf docker docker-compose vi-mode zsh-autosuggestions zsh-syntax-highlighting)
+```
+
+Starship: <https://starship.rs/>
+
+## Fonts
+
+Nerd Fonts: <https://www.nerdfonts.com/>
+
+## File versioning
+
+git: <https://git-scm.com/>
+
+TODO: Add instructions on how to configure
+
+## Containers
+
+docker: <https://www.docker.com/>
+
+## Manage tool versions
+
+asdf: <https://asdf-vm.com/>
+
+## Development on Microsoft Windows
+
+WSL2: <https://learn.microsoft.com/en-us/windows/wsl/>
+
+Ubuntu LTS: <https://www.microsoft.com/store/productId/9MTTCL66CPXJ>
