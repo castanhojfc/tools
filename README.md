@@ -89,28 +89,10 @@ Oh my zsh also comes with extra plugins, these are recommendations:
 plugins=(git asdf docker docker-compose vi-mode zsh-autosuggestions zsh-syntax-highlighting)
 ```
 
+## Shell prompt
+
 Starship: <https://starship.rs/>
 
 ## Fonts
 
 Nerd Fonts: <https://www.nerdfonts.com/>
-
-## File versioning
-
-git: <https://git-scm.com/>
-
-TODO: Add instructions on how to configure
-
-## Containers
-
-docker: <https://www.docker.com/>
-
-## Manage tool versions
-
-asdf: <https://asdf-vm.com/>
-
-## Development on Microsoft Windows
-
-WSL2: <https://learn.microsoft.com/en-us/windows/wsl/>
-
-Ubuntu LTS: <https://www.microsoft.com/store/productId/9MTTCL66CPXJ>
