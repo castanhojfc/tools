@@ -1,3 +1,24 @@
+# Local Setup
+
+# (Optional) WSL
+
+1. Open terminal with administrator rights
+2. Install: `wsl --install`
+3. Download and install Linux kernel update package: <https://aka.ms/wsl2kernel>
+4. List distributions available to download: `wsl --list --online`
+5. Install distribution: `wsl --install -d <Distribution Name>`
+6. Configure an account
+7. (Optional) make it the default distribution (Check help instructions from the wsl command)
+
+# Font
+
+Nerd Fonts: <https://www.nerdfonts.com>
+FiraCode: <https://github.com/tonsky/FiraCode>
+
+1. Install FiraCode Nerd Font: <https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraMono.zip>
+2. Install (WSL: Select all files, right click and install all Ubuntu: copy all files to `~/.local/share/fonts` and run `sudo fc-cache -f -v` or reboot)
+
+(Re-check everything below)
 ## Tools
 
 ## Terminal
