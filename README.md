@@ -151,6 +151,8 @@ zsh-autosuggestions: <https://github.com/zsh-users/zsh-autosuggestions>
 
 zsh-syntax-highlighting: <https://github.com/zsh-users/zsh-syntax-highlighting>
 
+zsh-autocomplete: <https://github.com/marlonrichert/zsh-autocomplete>
+
 # File versioning
 
 Git: <https://git-scm.com/>
