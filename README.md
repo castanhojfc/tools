@@ -98,6 +98,8 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
+alias vi=nvim
+alias vim=nvim
 
 # Zplug
 
