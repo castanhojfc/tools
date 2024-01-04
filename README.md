@@ -196,4 +196,5 @@ nvim
 ```
 
 Links:
+
 <https://github.com/alebcay/awesome-shell>
