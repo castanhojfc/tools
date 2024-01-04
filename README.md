@@ -26,7 +26,7 @@ Wez's Terminal: <https://wezfurlong.org/wezterm/>
 2. Create configuration file. (WSL: create file `wezterm.lua` inside the installation directory, Ubuntu: create `$HOME/.config/wezterm/wezterm.lua`)
 
 Configuration
-```
+```lua
 local wezterm = require 'wezterm'
 local act = wezterm.action
 local config = {}
@@ -47,26 +47,23 @@ config.window_close_confirmation = 'NeverPrompt'
 return config
 ```
 
-(Re-check everything below)
-## Tools
-
-## Terminal
+# Shell
 
 Z Shell: <https://www.zsh.org/>
-
 Oh My Zsh: <https://ohmyz.sh/>
-
 Z Plug: <https://github.com/zplug/zplug>
+Starship: <https://starship.rs>
 
+Install everything:
 ```bash
 sudo apt-get install zsh
 chsh -s /bin/zsh
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+curl -sS https://starship.rs/install.sh | sh
 ```
 
-`.zshrc` configurations:
-
+Add the following to the end of `~/.zshrc`:
 ```bash
 ENABLE_CORRECTION="true"
 
@@ -97,20 +94,15 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
-##############################
 # Zplug
-##############################
 
-# Check if zplug is installed
+# Check if installed
 if [[ ! -d ~/.zplug ]]; then
   git clone https://github.com/zplug/zplug ~/.zplug
   source ~/.zplug/init.zsh && zplug update --self
 fi
 
-# Essential
 source ~/.zplug/init.zsh
-
-# Zplug plugins
 zplug "zplug/zplug"
 
 # Install packages that have not been installed yet
@@ -125,8 +117,26 @@ fi
 
 zplug load
 
+# End of Zplug configuration
+
 eval "$(starship init zsh)"
+cd $HOME # Only needed for WSL
 ```
+
+(Re-check everything below)
+## Tools
+
+## Terminal
+
+
+
+
+
+
+
+`.zshrc` configurations:
+
+
 
 Plugins:
 zsh-autosuggestions: <https://github.com/zsh-users/zsh-autosuggestions>
