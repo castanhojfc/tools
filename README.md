@@ -54,7 +54,7 @@ Oh My Zsh: <https://ohmyz.sh/>
 Z Plug: <https://github.com/zplug/zplug>
 Starship: <https://starship.rs>
 
-Install everything:
+1. Install everything:
 ```bash
 sudo apt-get install zsh
 chsh -s /bin/zsh
@@ -63,8 +63,10 @@ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/instal
 curl -sS https://starship.rs/install.sh | sh
 ```
 
-Add the following to the end of `~/.zshrc`:
+2. Add the following to the end of `~/.zshrc` replacing the user configuration section:
 ```bash
+# User configuration
+
 ENABLE_CORRECTION="true"
 
 export VISUAL=vim
@@ -77,7 +79,6 @@ SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
 # Aliases
-# Some more basic aliases
 alias ll='ls -lh'
 alias la='ls -lAh'
 alias l='ls -lah'
@@ -122,6 +123,8 @@ zplug load
 eval "$(starship init zsh)"
 cd $HOME # Only needed for WSL
 ```
+3. Restart terminal
+
 
 (Re-check everything below)
 ## Tools
