@@ -58,6 +58,13 @@ Z Plug: <https://github.com/zplug/zplug>
 
 Starship: <https://starship.rs>
 
+zsh-autosuggestions: <https://github.com/zsh-users/zsh-autosuggestions>
+
+zsh-syntax-highlighting: <https://github.com/zsh-users/zsh-syntax-highlighting>
+
+zsh-autocomplete: <https://github.com/marlonrichert/zsh-autocomplete>
+
+
 1. Install everything:
 ```bash
 sudo apt-get install zsh
@@ -113,6 +120,9 @@ source ~/.zplug/init.zsh
 zplug "zplug/zplug"
 
 # Plugins
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "marlonrichert/zsh-autocomplete"
 
 # Install packages that have not been installed yet
 if ! zplug check --verbose; then
@@ -130,6 +140,10 @@ zplug load
 
 eval "$(starship init zsh)"
 cd $HOME # Only needed for WSL
+
+# zsh-autocomplete configuration
+bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
+bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
 ```
 3. Restart terminal
 
@@ -144,14 +158,6 @@ mkdir .config
 touch ~/.config/starship.toml
 starship preset gruvbox-rainbow -o ~/.config/starship.toml
 ```
-
-6. (Optional) install recommended Zsh plugins
-
-zsh-autosuggestions: <https://github.com/zsh-users/zsh-autosuggestions>
-
-zsh-syntax-highlighting: <https://github.com/zsh-users/zsh-syntax-highlighting>
-
-zsh-autocomplete: <https://github.com/marlonrichert/zsh-autocomplete>
 
 # File versioning
 
@@ -197,6 +203,12 @@ chmod u+x nvim.appimage
 sudo mv squashfs-root /
 sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
 nvim
+```
+
+2. Install clipboard provider:
+```bash
+sudo apt update
+sudo apt install xclip
 ```
 
 Links:
