@@ -125,37 +125,48 @@ cd $HOME # Only needed for WSL
 ```
 3. Restart terminal
 
-
-(Re-check everything below)
-## Tools
-
-## Terminal
-
-
-
-
-
-
-
-`.zshrc` configurations:
-
-
-
-Plugins:
-zsh-autosuggestions: <https://github.com/zsh-users/zsh-autosuggestions>
-
-zsh-syntax-highlighting: <https://github.com/zsh-users/zsh-syntax-highlighting>
-
-Oh my zsh also comes with extra plugins, these are recommendations:
-
+4. Activate Oh My Zsh plugins
 ```bash
-plugins=(git asdf docker docker-compose vi-mode zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git docker docker-compose vi-mode asdf)
 ```
 
-## Shell prompt
+5. Change Starship theme
+```bash
+mkdir .config
+touch ~/.config/starship.toml
+starship preset gruvbox-rainbow -o ~/.config/starship.toml
+```
 
-Starship: <https://starship.rs/>
+6. (Optional) install recommended Zsh plugins
 
-## Fonts
+zsh-autosuggestions: <https://github.com/zsh-users/zsh-autosuggestions>
+zsh-syntax-highlighting: <https://github.com/zsh-users/zsh-syntax-highlighting>
 
-Nerd Fonts: <https://www.nerdfonts.com/>
+# Git
+
+1. Configure
+```bash
+git config --global user.name <name>
+git config --global user.email <email>
+git config --global core.editor <editor>
+ssh-keygen -t ed25519 -C <email>
+ssh-agent
+ssh-add /home/<username/.ssh/<private_key>
+cat ~/.ssh/<public_key>
+```
+
+2. Add ssh key on GitHub
+
+# Docker & Docker Compose
+
+Download and install: <https://www.docker.com/products/docker-desktop>
+
+On WSL make sure that the integration is activated in the distro
+
+# asdf
+
+Install: `git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1`
+
+# Neovim
+
+(todo)
