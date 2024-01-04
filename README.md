@@ -15,8 +15,38 @@
 Nerd Fonts: <https://www.nerdfonts.com>
 FiraCode: <https://github.com/tonsky/FiraCode>
 
-1. Install FiraCode Nerd Font: <https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraMono.zip>
-2. Install (WSL: Select all files, right click and install all Ubuntu: copy all files to `~/.local/share/fonts` and run `sudo fc-cache -f -v` or reboot)
+1. Download FiraCode Nerd Font: <https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraMono.zip>
+2. Install (WSL: Select all files, right click and install all, Ubuntu: copy all files to `~/.local/share/fonts` and run `sudo fc-cache -f -v` or reboot)
+
+# Terminal
+
+Wez's Terminal: <https://wezfurlong.org/wezterm/>
+
+1. Download and install: <https://wezfurlong.org/wezterm/installation>
+2. Create configuration file. (WSL: create file `wezterm.lua` inside the installation directory, Ubuntu: create `$HOME/.config/wezterm/wezterm.lua`)
+
+Configuration
+```
+local wezterm = require 'wezterm'
+local act = wezterm.action
+local config = {}
+
+config = wezterm.config_builder()
+
+-- Optional, only needed for WSL
+config.default_prog = { 'wsl' }
+
+config.font = wezterm.font 'FiraCode Nerd Font Mono'
+
+config.color_scheme = 'Solarized (dark) (terminal.sexy)'
+
+config.enable_tab_bar = false
+
+config.window_close_confirmation = 'NeverPrompt'
+
+return config
+
+```
 
 (Re-check everything below)
 ## Tools
