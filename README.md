@@ -13,6 +13,7 @@
 # Font
 
 Nerd Fonts: <https://www.nerdfonts.com>
+
 FiraCode: <https://github.com/tonsky/FiraCode>
 
 1. Download FiraCode Nerd Font: <https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraMono.zip>
@@ -50,8 +51,11 @@ return config
 # Shell
 
 Z Shell: <https://www.zsh.org/>
+
 Oh My Zsh: <https://ohmyz.sh/>
+
 Z Plug: <https://github.com/zplug/zplug>
+
 Starship: <https://starship.rs>
 
 1. Install everything:
@@ -69,7 +73,7 @@ curl -sS https://starship.rs/install.sh | sh
 
 ENABLE_CORRECTION="true"
 
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 
@@ -106,6 +110,8 @@ fi
 source ~/.zplug/init.zsh
 zplug "zplug/zplug"
 
+# Plugins
+
 # Install packages that have not been installed yet
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -140,15 +146,18 @@ starship preset gruvbox-rainbow -o ~/.config/starship.toml
 6. (Optional) install recommended Zsh plugins
 
 zsh-autosuggestions: <https://github.com/zsh-users/zsh-autosuggestions>
+
 zsh-syntax-highlighting: <https://github.com/zsh-users/zsh-syntax-highlighting>
 
-# Git
+# File versioning
+
+Git: <https://git-scm.com/>
 
 1. Configure
 ```bash
 git config --global user.name <name>
 git config --global user.email <email>
-git config --global core.editor <editor>
+git config --global core.editor nvim
 ssh-keygen -t ed25519 -C <email>
 ssh-agent
 ssh-add /home/<username/.ssh/<private_key>
@@ -157,16 +166,31 @@ cat ~/.ssh/<public_key>
 
 2. Add ssh key on GitHub
 
-# Docker & Docker Compose
+# Containerization
+
+Docker: <https://www.docker.com>
 
 Download and install: <https://www.docker.com/products/docker-desktop>
 
 On WSL make sure that the integration is activated in the distro
 
-# asdf
+# Version Manager
+
+asdf: <https://asdf-vm.com/>
 
 Install: `git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1`
 
-# Neovim
+# Editor
 
-(todo)
+Neovim: <https://neovim.io/>
+
+1. Install:
+```bash
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+./nvim.appimage --appimage-extract
+./squashfs-root/AppRun --version
+sudo mv squashfs-root /
+sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
+nvim
+```
