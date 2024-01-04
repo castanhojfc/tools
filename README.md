@@ -202,7 +202,7 @@ chmod u+x nvim.appimage
 ./squashfs-root/AppRun --version
 sudo mv squashfs-root /
 sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
-nvim
+rm -rf nvim.appimage
 ```
 
 2. Install clipboard provider:
