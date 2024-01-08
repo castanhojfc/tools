@@ -260,7 +260,9 @@ layout {
 				height "50%"
 			}
 		}
-		
+		pane size=1 borderless=true {
+			plugin location="zellij:compact-bar"
+		}
 	}
 	tab {
 		pane split_direction="vertical" {
@@ -270,9 +272,9 @@ layout {
 				htop { args "" ""; }
 				htop { args "" ""; }
 			}
-			pane size=1 borderless=true {
-				plugin location="zellij:compact-bar"
-			}
+		}
+		pane size=1 borderless=true {
+			plugin location="zellij:compact-bar"
 		}
 	}
 	pane_template name="htop" {
