@@ -234,9 +234,7 @@ Configure (Copy paste values)
 ```bash
 theme "solarized-dark"
 
-default_layout "compact"
-
-layout_dir "~/Workspace/Layouts"
+layout_dir "/home/<username>/Workspace/Layouts"
 ```
 
 Layouts: <https://zellij.dev/documentation/layouts>
@@ -246,23 +244,51 @@ Layout Example (default.kdl):
 
 ```
 layout {
-    pane split_direction="vertical" {
-        pane edit="~/.zshrc"
-        pane split_direction="horizontal" {
-            htop { args ""; }
-            htop { args ""; }
-            htop { args ""; }
-        }
-    }
-    pane size=1 borderless=true {
-        plugin location="zellij:compact-bar"
-    }
-    pane_template name="htop" {
-        command "htop"
-        start_suspended true
-    }
+	tab name="my amazing tab" cwd="~" hide_floating_panes=true {
+		pane cwd="/tmp"
+		pane cwd="Workspace"
+		pane command="tail" {
+			args "-f" "Workspace/Layouts/default.kdl"
+		}
+		floating_panes {
+			pane
+			pane command="ls"
+			pane {
+				x 1
+				y "10%"
+				width 200
+				height "50%"
+			}
+		}
+		
+	}
+	tab {
+		pane split_direction="vertical" {
+			pane edit="~/.zshrc" size="70%" focus=true
+			pane split_direction="horizontal" name="My Awesome Pane"{
+				htop { args "" ""; }
+				htop { args "" ""; }
+				htop { args "" ""; }
+			}
+			pane size=1 borderless=true {
+				plugin location="zellij:compact-bar"
+			}
+		}
+	}
+	pane_template name="htop" {
+		command "htop"
+		start_suspended true
+	}
+}
+keybinds {
+	shared {
+		bind "Alt 1" { Run "git" "status"; }
+	}
 }
 ```
+
+Zellij will open the default layout always
+Create more project layouts and use then with: `zellij -l <layout>`
 
 Links:
 
