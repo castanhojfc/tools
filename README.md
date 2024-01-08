@@ -64,7 +64,6 @@ zsh-syntax-highlighting: <https://github.com/zsh-users/zsh-syntax-highlighting>
 
 zsh-autocomplete: <https://github.com/marlonrichert/zsh-autocomplete>
 
-
 1. Install everything:
 ```bash
 sudo apt-get install zsh
@@ -107,6 +106,7 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias vi=nvim
 alias vim=nvim
+alias zj=zellij
 
 # Zplug
 
@@ -159,6 +159,8 @@ touch ~/.config/starship.toml
 starship preset gruvbox-rainbow -o ~/.config/starship.toml
 ```
 
+Oh My Zsh Plugins: <https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins>
+
 # File versioning
 
 Git: <https://git-scm.com/>
@@ -184,26 +186,31 @@ Download and install: <https://www.docker.com/products/docker-desktop>
 
 On WSL make sure that the integration is activated in the distro
 
+# Package Manager
+
+Brew: https://brew.sh/
+
+Install: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+
+Install dependencies: `sudo apt-get install build-essential`
+
+Add brew to PATH: `(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/castanhojfc/.zshrc`
+
+Reload Shell: `eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"`
+
 # Version Manager
 
 asdf: <https://asdf-vm.com/>
 
-Install: `git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1`
+Install: `git clone https://github.com/asdf-vm/asdf.git ~/.asdf`
+
+Plugins: <https://github.com/asdf-vm/asdf-plugins>
 
 # Editor
 
 Neovim: <https://neovim.io/>
 
-1. Install:
-```bash
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
-./nvim.appimage --appimage-extract
-./squashfs-root/AppRun --version
-sudo mv squashfs-root /
-sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
-rm -rf nvim.appimage
-```
+1. Install: `brew install neovim`
 
 2. Install clipboard provider:
 ```bash
