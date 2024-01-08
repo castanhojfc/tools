@@ -285,6 +285,12 @@ layout {
 keybinds {
 	shared {
 		bind "Alt 1" { Run "git" "status"; }
+		bind "a" {
+			Run "tail" "-f" "foo" {
+				cwd "/tmp"
+				direction "Down"
+			}
+		}
 	}
 }
 ```
