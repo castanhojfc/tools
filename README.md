@@ -218,6 +218,52 @@ sudo apt update
 sudo apt install xclip
 ```
 
+# Terminal Multiplexer
+
+Zellij: <https://zellij.dev/>
+
+Install: `brew upgrade zellij`
+
+Create configuration and dump it to a file:
+```bash
+mkdir ~/.config/zellij
+zellij setup --dump-config > ~/.config/zellij/config.kdl
+```
+
+Configure (Copy paste values)
+```bash
+theme "solarized-dark"
+
+default_layout "compact"
+
+layout_dir "~/Workspace/Layouts"
+```
+
+Layouts: <https://zellij.dev/documentation/layouts>
+Examples: <https://zellij.dev/documentation/layout-examples>
+
+Layout Example (default.kdl):
+
+```
+layout {
+    pane split_direction="vertical" {
+        pane edit="~/.zshrc"
+        pane split_direction="horizontal" {
+            htop { args ""; }
+            htop { args ""; }
+            htop { args ""; }
+        }
+    }
+    pane size=1 borderless=true {
+        plugin location="zellij:compact-bar"
+    }
+    pane_template name="htop" {
+        command "htop"
+        start_suspended true
+    }
+}
+```
+
 Links:
 
 <https://github.com/alebcay/awesome-shell>
