@@ -202,7 +202,7 @@ Reload Shell: `eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"`
 
 asdf: <https://asdf-vm.com/>
 
-Install: `brew install asdf`
+Install: `git clone https://github.com/asdf-vm/asdf.git ~/.asdf`
 
 Plugins: <https://github.com/asdf-vm/asdf-plugins>
 
